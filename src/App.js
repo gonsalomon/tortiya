@@ -2,10 +2,16 @@ import Header from './components/Header'
 import Menu from './components/Menu'
 import Card from './components/Card'
 import Footer from './components/Footer/Footer.jsx'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import {supabase} from './services/db'
+
 
 function App() {
   const [cards, setCards] = useState([]);
+
+  useEffect(()=>{
+    //fetch and fill in cards from DB (filling into cards w useCards)
+  },[cards])
 
   return (
     <div className="App col">
