@@ -1,7 +1,7 @@
 import Header from './components/Header'
 import Menu from './components/Menu'
 import Card from './components/Card'
-import Footer from './components/Footer'
+import Footer from './components/Footer/Footer.jsx'
 import { useState } from 'react'
 
 function App() {
