@@ -1,31 +1,34 @@
 import Header from './components/Header'
 import NavBar from './components/NavBar/NavBar.jsx'
-import Card from './components/Card'
+import Content from './components/Content/Content'
 import Footer from './components/Footer/Footer.jsx'
 import { useEffect, useState } from 'react'
 import {supabase} from './services/db'
 
-
 function App() {
-  const [cards, setCards] = useState([]);
+  const [cards, setCards] = useState([])
+  const [section, setSection] = useState('tortillas')
 
   useEffect(()=>{
-    //fetch and fill in cards from DB (filling into cards w useCards)
-  },[cards])
+    async function fetchCards() {
+      let { data: tortillas, error } = await supabase
+    .from('tortillas')
+    .select('*')
+    console.error(error)
+    
+    return tortillas
+    }
+    
+    setCards(fetchCards()) 
+  }, [])
 
   return (
     <div className="App col">
-      <header className='row'>
-        <Header />
-        <NavBar />
-      </header>
-      <section className='board'>
-        {()=>{for (let card in cards){
-          return(
-            <Card data={card} />
-          )
-        }}}
-      </section>
+      <Header />
+      <main className='row'>
+        <Content section={section} cards={cards}/>
+        <NavBar setSection={setSection}/>
+      </main>
       <Footer />
     </div>
   );

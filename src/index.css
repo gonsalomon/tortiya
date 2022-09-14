@@ -12,20 +12,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-/*posicionamiento*/
+
 .row{
   display: flex;
   flex-direction: row;
-  margin: auto;
-}
-
-.col{
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-}
-
-.board{
-  display: grid;
-  grid-template-rows: card card;
 }
