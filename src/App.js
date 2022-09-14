@@ -1,5 +1,5 @@
 import Header from './components/Header'
-import Menu from './components/Menu'
+import NavBar from './components/NavBar/NavBar.jsx'
 import Card from './components/Card'
 import Footer from './components/Footer/Footer.jsx'
 import { useEffect, useState } from 'react'
@@ -17,7 +17,7 @@ function App() {
     <div className="App col">
       <header className='row'>
         <Header />
-        <Menu />
+        <NavBar />
       </header>
       <section className='board'>
         {()=>{for (let card in cards){
