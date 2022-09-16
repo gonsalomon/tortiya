@@ -1,14 +1,19 @@
-import React from 'react'
+import React from 'react';
+import img from '../../images/imagen-de-prueba.png';
+import './Content.css';
 
-function Content({cards, section}) {
+function Content({cards, section, setLogin, login}) {
   switch (section) {
     case 'tortillas':
         return (
             <section className='content-tortilla'>
-                <h3>Nombre:Española</h3>
-                <p>Variedad:normal</p>
-                <p>Precio:$400</p>
-                <p>Relleno:jamon y queso</p>
+                <img src={img} alt="tortilla-de-papa" />
+                <div className='tortilla-data'>
+                    <h3>Nombre:Española</h3>
+                    <p>Variedad:normal</p>
+                    <p>Precio:$400</p>
+                    <p>Relleno:jamon y queso</p>
+                </div>
              {/*    {()=>{
                     cards.map((card)=>{
                         return (
@@ -27,7 +32,25 @@ function Content({cards, section}) {
               </section>
           )
     case 'pedidos':
-        return (<h1>Sección en construcción 1</h1>)
+
+        
+       
+        return (<div>
+            <form action="">
+                <label>email</label>
+                <input type="email" name="email" />
+                <label>Nombre</label>
+                <input type="text" name="nombre"/>
+                <label>Apellido</label>
+                <input type="text" name="apellido"/>
+            </form>
+            
+          
+
+        </div>
+              
+        
+        )
     case 'about':
         return (<h1>Sección en construcción 2</h1>)
     default:

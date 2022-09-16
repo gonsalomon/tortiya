@@ -4,10 +4,12 @@ import Content from './components/Content/Content'
 import Footer from './components/Footer/Footer.jsx'
 import { useEffect, useState } from 'react'
 import { supabase } from './services/db'
+import './App.css'
 
 function App() {
-  const [cards, setCards] = useState([])
-  const [section, setSection] = useState('tortillas')
+  const [cards, setCards] = useState([]);
+  const [section, setSection] = useState('tortillas');
+  const [login, setLogin] = useState(true);
 
   useEffect(() => {
     async function fetchCards() {
@@ -25,11 +27,10 @@ function App() {
   return (
     <div className="App col">
       <Header />
-      <main className='row'>
+      <main className='main-row'>
         {/* envio por props al componente Content */}
-        <Content section={section} cards={cards} />
+        <Content setLogin={setLogin} login={login} section={section} cards={cards} />
         <NavBar setSection={setSection} />
-        {console.log(section)}
       </main>
       <Footer />
     </div>
