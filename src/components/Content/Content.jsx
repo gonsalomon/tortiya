@@ -4,22 +4,26 @@ function Content({cards, section}) {
   switch (section) {
     case 'tortillas':
         return (
-            <section className='board'>
-                {()=>{
-                    console.log(typeof cards)
+            <section className='content-tortilla'>
+                <h3>Nombre:Española</h3>
+                <p>Variedad:normal</p>
+                <p>Precio:$400</p>
+                <p>Relleno:jamon y queso</p>
+             {/*    {()=>{
                     cards.map((card)=>{
                         return (
-                        <div key={card.id}>
+                        <div>
                             <img src={card.img} alt='Imagen de una tortilla'/>
-                            <h3>{card.nombre}</h3>
-                            <b>{card.variedad}</b>
-                            <p>Precio: {card.precio}</p>
+                            <h3>{card.nombre}Española</h3>
+                            <b>{card.variedad}Normal</b>
+                            <p>Precio:200 {card.precio}</p>
                             <p>Relleno con {card.relleno}</p>
+                            
                         </div>
                         )
                     })
                 }
-                }
+                } */}
               </section>
           )
     case 'pedidos':
