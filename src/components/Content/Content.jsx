@@ -1,20 +1,21 @@
 import React from 'react';
 import img from '../../images/imagen-de-prueba.png';
 import './Content.css';
+import Login from '../Login/Login';
 
-function Content({cards, section, setLogin, login}) {
-  switch (section) {
-    case 'tortillas':
-        return (
-            <section className='content-tortilla'>
-                <img src={img} alt="tortilla-de-papa" />
-                <div className='tortilla-data'>
-                    <h3>Nombre:Española</h3>
-                    <p>Variedad:normal</p>
-                    <p>Precio:$400</p>
-                    <p>Relleno:jamon y queso</p>
-                </div>
-             {/*    {()=>{
+function Content({ cards, section, setLogin, login }) {
+    switch (section) {
+        case 'tortillas':
+            return (
+                <section className='content-tortilla'>
+                    <img src={img} alt="tortilla-de-papa" />
+                    <div className='tortilla-data'>
+                        <h3>Nombre:Española</h3>
+                        <p>Variedad:normal</p>
+                        <p>Precio:$400</p>
+                        <p>Relleno:jamon y queso</p>
+                    </div>
+                    {/*    {()=>{
                     cards.map((card)=>{
                         return (
                         <div>
@@ -29,33 +30,75 @@ function Content({cards, section, setLogin, login}) {
                     })
                 }
                 } */}
-              </section>
-          )
-    case 'pedidos':
-
-        
-       
-        return (<div>
-            <form action="">
-                <label>email</label>
-                <input type="email" name="email" />
-                <label>Nombre</label>
-                <input type="text" name="nombre"/>
-                <label>Apellido</label>
-                <input type="text" name="apellido"/>
-            </form>
-            
+                </section>
+            )
+        case 'pedidos':
+            <Login setLogin={setLogin} login={login}/>
+                
+             
           
+        /*        switch (login) {
+                        case "Logueate":
+                    
+                            return (<div>
+                                <form action="">
+                                    <label>email</label>
+                                    <input type="email" name="email" />
+                                    <label>Nombre</label>
+                                    <input type="text" name="nombre" />
+                                    <label>Apellido</label>
+                                    <input type="text" name="apellido" />
+                                </form>
+                    
+                    
+                    
+                            </div>
+                    
+                    
+                            ) 
+                        case "no-log":
+                            return (<div>
+                                <form action="">
+                                    <label>email</label>
+                                    <input type="email" name="email" />
+                                    <label>Nombre</label>
+                                    <input type="text" name="nombre" />
+                                    <label>Apellido</label>
+                                    <input type="text" name="apellido" />
+                                </form>
+                    
+                    
+                    
+                            </div>
+                    
+                    
+                            ) 
+                        default:
+                         break; 
+                    } */
 
-        </div>
-              
-        
-        )
-    case 'about':
-        return (<h1>Sección en construcción 2</h1>)
-    default:
-        return (<h1>404: sección no encontrada</h1>)
-  }
+        /*     return (<div>
+                <form action="">
+                    <label>email</label>
+                    <input type="email" name="email" />
+                    <label>Nombre</label>
+                    <input type="text" name="nombre" />
+                    <label>Apellido</label>
+                    <input type="text" name="apellido" />
+                </form>
+
+
+
+            </div>
+
+
+            ) */
+        case 'about':
+            return (<h1>Sección en construcción 2</h1>)
+        default:
+            return (<h1>404: sección no encontrada</h1>)
+    }
 }
+
 
 export default Content

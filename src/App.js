@@ -9,7 +9,7 @@ import './App.css'
 function App() {
   const [cards, setCards] = useState([]);
   const [section, setSection] = useState('tortillas');
-  const [login, setLogin] = useState(true);
+
 
   useEffect(() => {
     async function fetchCards() {
@@ -29,7 +29,7 @@ function App() {
       <Header />
       <main className='main-row'>
         {/* envio por props al componente Content */}
-        <Content setLogin={setLogin} login={login} section={section} cards={cards} />
+        <Content  section={section} cards={cards} />
         <NavBar setSection={setSection} />
       </main>
       <Footer />
