@@ -3,7 +3,7 @@ import img from '../../images/imagen-de-prueba.png';
 import './Content.css';
 import Login from '../Login/Login';
 
-function Content({ cards, section, setLogin, login }) {
+function Content({ cards, section, log, usr }) {
     switch (section) {
         case 'tortillas':
             return (
@@ -33,49 +33,45 @@ function Content({ cards, section, setLogin, login }) {
                 </section>
             )
         case 'pedidos':
-            <Login setLogin={setLogin} login={login}/>
-                
-             
-          
-        /*        switch (login) {
-                        case "Logueate":
-                    
-                            return (<div>
-                                <form action="">
-                                    <label>email</label>
-                                    <input type="email" name="email" />
-                                    <label>Nombre</label>
-                                    <input type="text" name="nombre" />
-                                    <label>Apellido</label>
-                                    <input type="text" name="apellido" />
-                                </form>
-                    
-                    
-                    
-                            </div>
-                    
-                    
-                            ) 
-                        case "no-log":
-                            return (<div>
-                                <form action="">
-                                    <label>email</label>
-                                    <input type="email" name="email" />
-                                    <label>Nombre</label>
-                                    <input type="text" name="nombre" />
-                                    <label>Apellido</label>
-                                    <input type="text" name="apellido" />
-                                </form>
-                    
-                    
-                    
-                            </div>
-                    
-                    
-                            ) 
-                        default:
-                         break; 
-                    } */
+            return(
+                <div>
+                    <Login setLogin={log.setLogged} login={log.logged}/>
+                </div>
+            )
+            /*esto debería ser interno al componente Login, que sí sabe ese login. Le hice un refactor,
+            ahora se llama 'action' esa string.
+            switch (login) {
+                case "Logueate":
+            
+                    return (<div>
+                        <form action="">
+                            <label>email</label>
+                            <input type="email" name="email" />
+                            <label>Nombre</label>
+                            <input type="text" name="nombre" />
+                            <label>Apellido</label>
+                            <input type="text" name="apellido" />
+                        </form>
+            
+            
+            
+                    </div>
+                    ) 
+                case "no-log":
+                    return (<div>
+                        <form action="">
+                            <label>email</label>
+                            <input type="email" name="email" />
+                            <label>Nombre</label>
+                            <input type="text" name="nombre" />
+                            <label>Apellido</label>
+                            <input type="text" name="apellido" />
+                        </form>
+                    </div>
+                    ) 
+                default:
+                    break; 
+            } */
 
         /*     return (<div>
                 <form action="">
@@ -86,12 +82,7 @@ function Content({ cards, section, setLogin, login }) {
                     <label>Apellido</label>
                     <input type="text" name="apellido" />
                 </form>
-
-
-
             </div>
-
-
             ) */
         case 'about':
             return (<h1>Sección en construcción 2</h1>)

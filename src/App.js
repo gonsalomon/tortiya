@@ -9,6 +9,8 @@ import './App.css'
 function App() {
   const [cards, setCards] = useState([]);
   const [section, setSection] = useState('tortillas');
+  const [logged, setLogged] = useState('false')
+  const [user, setUser] = useState('')
 
 
   useEffect(() => {
@@ -29,7 +31,7 @@ function App() {
       <Header />
       <main className='main-row'>
         {/* envio por props al componente Content */}
-        <Content  section={section} cards={cards} />
+        <Content  section={section} cards={cards} log={{logged: logged, setLogged: setLogged}} usr={{user: user, setUser: setUser}} />
         <NavBar setSection={setSection} />
       </main>
       <Footer />
