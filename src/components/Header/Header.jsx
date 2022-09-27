@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import gifHeader from '../../images/tortis.gif'
 import './header.css';
 
@@ -8,7 +8,10 @@ useEffect para las imagenes con la funcion
 
 function Header() {
   return (
-    <img className='clase-header' src={gifHeader} alt="gif-de-tortillas" />
+    <div className='main-row'>
+      <h1>TortiYa</h1>
+      <img className='clase-header' src={gifHeader} alt="gif-de-tortillas" />
+    </div>
   )
 }
 
