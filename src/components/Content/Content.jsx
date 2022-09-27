@@ -1,5 +1,5 @@
 import React from 'react';
-import img from '../../images/imagen-de-prueba.png';
+import img from '../../images/5.jpeg';
 import './Content.css';
 import Login from '../Login/Login';
 
