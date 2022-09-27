@@ -18,7 +18,7 @@ function App() {
       let { data: tortillas, error } = await supabase
         .from('tortillas')
         .select('*')
-      console.error(error)
+      console.log(error)
 
       return tortillas
     }
