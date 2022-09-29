@@ -14,17 +14,24 @@ function App() {
 
 
   useEffect(() => {
-    async function fetchCards() {
+    async function fetchCards() {      
       let { data: tortillas, error } = await supabase
-        .from('tortillas')
-        .select('*')
-      console.log(error)
+      .from('tortillas')
+      .select('*')
 
-      return tortillas
+      if (error!==null)
+        console.log(error) 
+      return await tortillas
+    }      
+    
+      let tortillas = fetchCards()
+      setCards(tortillas)
     }
-    //seteo el arreglo que me viene por db a cards
-    setCards(fetchCards())
-  }, [])
+  , [])
+
+  useEffect(()=>{
+    console.log(cards)
+  }, [cards])
 
   return (
     <div className="App col">

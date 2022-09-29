@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { supabase } from '../../services/db';
 
-export default function Login({login, setLogin}) {
+export default function Login({login, setLogin, usr}) {
   // const [login, setLogin] = useState("Logueate");
   // comentado por colisión de nombre con las props
   const [logged, setLogged] = useState(false);

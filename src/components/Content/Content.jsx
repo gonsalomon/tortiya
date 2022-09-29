@@ -15,75 +15,14 @@ function Content({ cards, section, log, usr }) {
                         <p>Precio:$400</p>
                         <p>Relleno:jamon y queso</p>
                     </div>
-                    {/*    {()=>{
-                    cards.map((card)=>{
-                        return (
-                        <div>
-                            <img src={card.img} alt='Imagen de una tortilla'/>
-                            <h3>{card.nombre}Española</h3>
-                            <b>{card.variedad}Normal</b>
-                            <p>Precio:200 {card.precio}</p>
-                            <p>Relleno con {card.relleno}</p>
-                            
-                        </div>
-                        )
-                    })
-                }
-                } */}
                 </section>
             )
         case 'pedidos':
             return(
                 <div>
-                    <Login setLogin={log.setLogged} login={log.logged}/>
+                    <Login usr={usr} setLogin={log.setLogged} login={log.logged}/>
                 </div>
             )
-            /*esto debería ser interno al componente Login, que sí sabe ese login. Le hice un refactor,
-            ahora se llama 'action' esa string.
-            switch (login) {
-                case "Logueate":
-            
-                    return (<div>
-                        <form action="">
-                            <label>email</label>
-                            <input type="email" name="email" />
-                            <label>Nombre</label>
-                            <input type="text" name="nombre" />
-                            <label>Apellido</label>
-                            <input type="text" name="apellido" />
-                        </form>
-            
-            
-            
-                    </div>
-                    ) 
-                case "no-log":
-                    return (<div>
-                        <form action="">
-                            <label>email</label>
-                            <input type="email" name="email" />
-                            <label>Nombre</label>
-                            <input type="text" name="nombre" />
-                            <label>Apellido</label>
-                            <input type="text" name="apellido" />
-                        </form>
-                    </div>
-                    ) 
-                default:
-                    break; 
-            } */
-
-        /*     return (<div>
-                <form action="">
-                    <label>email</label>
-                    <input type="email" name="email" />
-                    <label>Nombre</label>
-                    <input type="text" name="nombre" />
-                    <label>Apellido</label>
-                    <input type="text" name="apellido" />
-                </form>
-            </div>
-            ) */
         case 'about':
             return (<h1>Sección en construcción 2</h1>)
         default:

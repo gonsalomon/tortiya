@@ -7,23 +7,19 @@ useEffect para las imagenes con la funcion
  */
 
 function Header() {
-  const [image, setImage] = useState(1)
+  const [imagePath, setImagePath] = useState("1.jpeg")
 
   const imageCycle = () => {
-    setInterval(()=>{
-      setImage(image < 5 ? image+1 : 1)
-    }, 3000)
+    setInterval(setImagePath(Number(imagePath.charAt(0)) < 5 ? (Number(imagePath.charAt(0))+1)+".jpeg" : "1.jpeg"),
+    3000)
   }
 
-  
-  
   useEffect(()=>imageCycle(), [])
   
-
   return (
     <div className='main-row'>
       <h1>TortiYa</h1>
-      <img className='background-image' src={"../../"+image+".jpeg"} alt=''/>
+      <img className='background-image' src={"../../"+imagePath+".jpeg"} alt=''/>
     </div>
   )
 }
